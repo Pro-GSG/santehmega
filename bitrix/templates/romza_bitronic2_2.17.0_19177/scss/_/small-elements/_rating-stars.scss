@@ -1,0 +1,34 @@
+.rating-stars{
+	margin-top: 5px;
+	margin-left: -2px;
+	font-size: 0;
+	i{
+		display: inline-block;
+		position: relative;
+		width: 18px;
+		height: 18px;
+		&:hover{ cursor: pointer;}
+		&:before{ 
+			font-size: 16px;
+			position: absolute;
+			left: -1px;
+
+			@include transition(false, color);
+		}
+	}
+
+	&[data-disabled="true"] > i:hover{cursor: default;}
+	
+	.be-first{display: none;}
+	&.no-rate-yet{
+		position: relative;
+		.be-first{display: block;}
+	}
+}
+.be-first{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: -3px;
+	font-size: 10px;
+}

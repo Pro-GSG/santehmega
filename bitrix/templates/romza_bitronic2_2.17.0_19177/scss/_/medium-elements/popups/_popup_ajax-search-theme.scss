@@ -1,0 +1,9 @@
+.popup_ajax-search{
+	@include silver-static;
+}
+
+.ajax-search-item{
+	&:hover{
+		background: #e8e8e8;
+	}
+}

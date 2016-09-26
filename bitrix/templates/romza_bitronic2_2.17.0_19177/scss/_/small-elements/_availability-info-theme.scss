@@ -1,0 +1,40 @@
+.availability-info{
+	.when-in-stock .info-tag{
+		background: #6bbe22;
+		&[data-popup], &[data-toggle="modal"]{
+			&:hover{ background: #4e9510;}
+		}
+	}
+	.when-out-of-stock .info-tag{
+		background: #ff1d1d;
+		&[data-toggle="modal"]:hover{
+			background: darken(#ff1d1d, 10%);
+		}
+	}
+	.when-available-for-order .info-tag{
+		background: #ffaa00;
+		&[data-toggle="modal"]:hover{
+			background: darken(#ffaa00, 7%);
+		}
+	}
+	.text{
+		color: #fff;
+	}
+}
+
+.avail-dot{
+	background: #f8f8f8;
+	box-shadow: inset 0px 1px 5px fade-out(#000, 0.69);
+	&.when-in-stock:before{
+		background: #327a12; // fallback from gradient
+		background: linear-gradient(#8cc926, #327a12);
+	}
+	&.when-out-of-stock:before{
+		background: #8b1d23; // fallback from gradient
+		background: linear-gradient(#8b1d23, #fc4448);
+	}
+	&.when-available-for-order:before{
+		background: #ffaa00;
+		background: linear-gradient(darken(#ffaa00, 10%), #ffaa00);
+	}
+}

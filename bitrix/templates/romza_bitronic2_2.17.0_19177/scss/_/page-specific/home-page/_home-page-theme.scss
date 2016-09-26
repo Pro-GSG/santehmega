@@ -1,0 +1,16 @@
+.news-n-articles{
+	.date-wrap>.date{
+		color: #7d8096;
+	}
+}
+
+.brands-tagcloud .brand-tag{
+	color: silver;
+	&:hover{
+		color: #000;
+		background: $main-color-soft;
+	}
+	&.active, &.active:hover{
+		@include main-normal;
+	}
+}

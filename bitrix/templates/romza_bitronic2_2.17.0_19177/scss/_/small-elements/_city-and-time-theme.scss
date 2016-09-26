@@ -1,0 +1,40 @@
+.btn-city-toggle{
+	i:before{
+		color: #000;
+	}
+	@media (max-width: 767px){
+		border-color: #d6d6d6;
+	}
+}
+
+.bar{
+	&.holiday{ background: #ff7171;}
+	&.fullday{ background: #68c000;}
+	&.halfday{ background: gold;}
+}
+
+.time{
+	@media (max-width: 767px){
+		.time-content{
+			@include silver-static;
+			.notification-popup{
+				&, &>.content{
+					background: none;
+					color: #000;
+				}
+			}
+		}
+		&>i{
+			background: #d6d6d6;
+			&:hover{
+				background: lighten(#d6d6d6, 5%);
+			}
+			&.toggled{
+				background: $main-color-soft;
+				color: $main-normal-textcolor;
+			}
+		}
+
+	}
+}
+

@@ -1,0 +1,16 @@
+.feedback{
+	box-shadow: 0px 6px 3px -3px fade-out(#000, 0.8) inset;
+	background: #EAEBEE url('../../img/bg/feedback.png') no-repeat 10% top;
+	
+	// [data-limit-sliders="true"] &{
+	// 	background: none;
+	// 	box-shadow: none;
+	// 	>.container{
+	// 		box-shadow: 0px 6px 3px -3px fade-out(#000, 0.8) inset;
+	// 		background: #d7dce6 url('../../img/bg/feedback.png') no-repeat 10% top;
+	// 	}
+	// }
+	.dot{
+		background: $feedback-dots;
+	}
+}

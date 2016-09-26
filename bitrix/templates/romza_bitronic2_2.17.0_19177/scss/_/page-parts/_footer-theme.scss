@@ -1,0 +1,56 @@
+.footer-top{
+	.payment-systems-info {
+		color: #666;
+	}
+}
+.footer-menu-item{
+	&>.link{
+		&:before{
+			border-color: $ul-circles-color;
+		}
+	}
+
+	&.active>.link, &.active>span{
+		color: #000;
+		@include set-colors('.text', #000);
+		font-weight: bold;
+	}
+}
+.footer-middle{
+	// background-color: #303138;
+	// background: url('../../img/bg/footer_pattern.jpg');
+	color: $footer-middle-text;
+}
+.footer-nav{
+	color: $footer-nav-text;
+
+	a{
+		&, &:link, &:visited{
+			color: $footer-nav-text;
+			border-bottom-color: fade-out($footer-nav-text, 0.6);
+		}
+
+		&:focus, &:hover{
+			border-bottom-color: transparent;
+		}
+	}
+}
+.footer-bottom{
+	background: $footer-bottom-bg;
+	color: $footer-bottom-text;
+
+	// [data-limit-sliders="true"] &{
+	// 	background: none;
+	// 	>.container{
+	// 		background: $footer-bottom-bg;
+	// 	}
+	// }
+
+	.developed-by a {
+		&,&:link,&:visited {
+			color:               #fff;
+			border-bottom-color: rgba(255, 255, 255, 0.4);
+		}
+		&:focus,&:hover {border-bottom-color: transparent}
+	}
+}

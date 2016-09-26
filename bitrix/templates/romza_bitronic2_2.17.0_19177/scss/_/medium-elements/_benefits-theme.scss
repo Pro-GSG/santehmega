@@ -1,0 +1,37 @@
+.benefit{
+	.img-wrap{
+		color: $main-normal-textcolor;
+		background: $main-gradient-to-top;
+	}
+
+	&.openness{ 
+		.img-wrap{
+			background: $benefit-openness, $main-gradient-to-top;
+		}
+	}
+	&.warranty{ 
+		.img-wrap{
+			background: $benefit-warranty, $main-gradient-to-top;
+		}
+	}
+	&.delivery{ 
+		.img-wrap{
+			background: $benefit-delivery, $main-gradient-to-top;
+		}
+	}
+	&.profit{ 
+		.img-wrap{
+			background: $benefit-profit, $main-gradient-to-top;
+		}
+	}
+	&.exchange{ 
+		.img-wrap{
+			background: $benefit-exchange, $main-gradient-to-top;
+		}
+	}
+	&.bigstock{ 
+		.img-wrap{
+			background: $benefit-bigstock, $main-gradient-to-top;
+		}
+	}
+}

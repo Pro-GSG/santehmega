@@ -1,0 +1,15 @@
+.one-click-wrap{
+	>.action{
+		&:hover, &:active{
+			color: #000;
+			>.text{ border-color: transparent;}
+		}
+	}
+}
+
+.one-click-buy{
+	&.btn-action{
+		color: #000;
+		@include btn-silver;
+	}
+}

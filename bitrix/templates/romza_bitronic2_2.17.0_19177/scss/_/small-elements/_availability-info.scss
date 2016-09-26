@@ -1,0 +1,134 @@
+.availability-info{
+	position: relative; // for .store-info
+	display: inline-block;
+	vertical-align: middle;
+	.info-tag{
+		@include transition(false, (background, opacity));
+		display: inline-block;
+		vertical-align: middle;
+		padding: 1px 10px 5px;
+		&[data-toggle="modal"],
+		&[data-popup]{
+			&:hover{ cursor: pointer;}
+			.text{ border-bottom: 1px dotted;}
+		}
+	}
+	.info-info{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 2px;
+		max-width: 250px;
+		font-size: 11px;
+		white-space: normal;
+		line-height: normal;
+	}
+	.text{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 11px;
+		white-space: nowrap;
+	}
+
+	.when-in-stock .tooltip{
+		max-width: 150px;
+		white-space: normal;
+	}
+	.when-in-stock.toggled .tooltip{
+		opacity: 0;
+	}
+	.when-out-of-stock .tooltip{
+		max-width: 110px;
+		white-space: normal;
+	}
+	.when-available-for-order{
+		// max-width: 120px;
+		.info-tag{
+			max-width: 100px;
+			margin: 0 auto;
+		}
+		
+		.tooltip{
+			max-width: 170px;
+		}
+	}
+}
+
+.store-info{
+	width: 200px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	.header, .content, .quantity, .address{display: block;}
+}/* .store-info */
+
+.when-in-stock{ 
+	display: inline-block;
+	vertical-align: middle;
+
+	.availability-comments-enabled .blocks-item &{display: block;}
+
+}
+.availability-comments-enabled{
+	.blocks-item{
+		.out-of-stock, .available-for-order{
+			.when-in-stock{display: none;}
+		}
+	}
+}
+.when-out-of-stock{ display: none;}
+.when-available-for-order{ display: none;}
+.out-of-stock{
+	.when-in-stock{ display: none;}
+	.when-out-of-stock{ 
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.availability-comments-enabled .blocks-item & .when-out-of-stock{display: block;}
+}
+.available-for-order{
+	.when-in-stock{ display: none;}
+	.when-available-for-order{ 
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.availability-comments-enabled .blocks-item & .when-available-for-order{display: block;}
+}
+
+
+.avail-dot{
+	position: relative;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	text-align: center;
+	white-space: normal;
+	top: -2px;
+	
+	&:before{
+		content: '';
+		position: absolute;
+		top: 3px;right: 3px;bottom: 3px;left: 3px;
+		border-radius: 50%;
+	}
+	&:after{content: '';}
+
+	&[data-toggle="modal"],
+	&[data-popup]{
+		&:hover{cursor: pointer;}
+	}
+}
+
+[data-stores="disabled"][data-show-stock="true"] .availability-info{
+	.when-in-stock{
+		.info-tag{
+			padding: 0 4px 4px;
+		}
+		.text{ 
+			font-size: em(9px);
+			&:after{
+				content: attr(data-how-much);
+				text-transform: none;
+				font-weight: normal;
+			}
+		}
+	}
+}

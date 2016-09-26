@@ -1,0 +1,6 @@
+.align-btn{
+
+	.statebox:checked + &{
+		@include main-clicked;
+	}
+}

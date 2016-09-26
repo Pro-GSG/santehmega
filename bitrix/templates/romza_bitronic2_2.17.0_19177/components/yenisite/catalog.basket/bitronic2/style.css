@@ -1,0 +1,19 @@
+span.quantity-counter {
+	display: inline-block;
+}
+span.required {
+	color: #f00;
+}
+div.errortext {
+	display: none;
+}
+span.market {
+	display: none;
+}
+#basket_form footer.footer-order {
+	margin-top: 50px;
+	padding-top: 10px;
+}
+div.buy-block {
+	float: right;
+}

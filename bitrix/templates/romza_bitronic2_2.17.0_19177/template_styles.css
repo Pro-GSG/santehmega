@@ -1,0 +1,466 @@
+.brand-logo {
+    float: left;
+}
+/*------------------- EDOST для мини расчета в карточке товара ------------*/
+#edost_catalogdelivery_inside_city_head {
+    color: #000;
+    font-weight: bold;
+}
+img.edost_ico_normal2 {
+    width: auto!important;
+    height: 28px!important;
+    margin: 5px;
+	margin-right: 10px;
+	margin-left: 0px;
+	border: 1px solid #ebebeb;
+}
+span.edost_format_tariff {
+    font-weight: normal!important;
+    font-size: 13px!important;
+}
+span.edost_price_free {
+    font-size: 12px!important;
+}
+.edost_format_name {
+    font-size: 13px!important;
+}
+div#edost_catalogdelivery_inside {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+span.edost_link:hover {
+    border-bottom: 1px dotted #fff;
+}
+span.edost_format_price.edost_price {
+    font-size: 13px!important;
+}
+span.edost_format_price.edost_price br {
+    display: none;
+}
+div.edost_main, div.edost_office_window, div.edost_main table {
+    font-family: arial;
+    line-height: normal;
+    float: left;
+    width: 100%;
+}
+div.edost_catalogdelivery_window {
+    min-width: 10px!important;
+    max-height: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding:20px;
+}
+td.edost_catalogdelivery_window_head {
+    padding-left: 15px!important;
+    padding-bottom: 15px!important;
+    color: #000!important;
+}
+div.edost_catalogdelivery_window_close {
+    cursor: pointer;
+}
+table#edost_catalogdelivery_window_city_table {
+    margin-bottom: 0px!important;
+}
+div.edost_catalogdelivery_window div#edost_office_inside {
+    height: 260px!important;
+}
+div.edost_catalogdelivery_window div.edost_format_head {
+    margin-bottom: 5px!important;
+}
+div.edost_catalogdelivery_window div#edost_door_div {
+    margin: 10px 0 0 0!important;
+}
+div.edost_catalogdelivery_window div#edost_house_div {
+	float: none;
+}
+@media (max-width: 767px){
+#edost_catalogdelivery_inside_city {
+    pointer-events: auto!important;
+}
+}
+/*------------------ END --------------------------*/
+.product-photos .brand {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+.info weight{
+display: none;
+}
+.info dimensions{
+display: none;
+}
+.header-main-content .brand .brand-name {
+    font-family: Opensans,Arial,Helvetica,sans-serif;
+}
+.txt_logo_bottom {
+    font-size: 14px;
+    text-shadow: none;
+    height: 5px;
+    margin-left: 8px;
+    margin-top: -5px;
+    float: left;
+}
+[data-header-version="v4"] .header-main-content .brand {
+    margin-bottom: 25px;
+}
+[data-header-version="v4"] .header-main-content .city-and-time {
+    margin-bottom: 20px;
+}
+.developed-by {
+    display: none;
+}
+.characteristics .info {
+    display: none;
+}
+.product-photos .brand {
+    background: none!important;
+}
+.info.rating.rating-w-comments {
+    display: none;
+}
+/*.blocks-item .art-rate, .hurry-item .art-rate {
+    margin-bottom: 5px;
+    display: none;
+} */
+#edost_location_address_div input.edost_input {
+    width: 100%;
+    outline: none;
+    border: 1px solid #d9d7e5!important;
+    border-radius: 4px;
+    min-height: 44px!important;
+    padding: 0px 15px!important;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.15);
+}
+/*----------------- EDOST TEMPLATE ------------------*/
+     .edost_format_radio {
+    border-style: solid; 
+	border-width: 3px;
+    border-color: transparent;	
+	color: #000;
+    background: -webkit-linear-gradient(#fff, #f3f5f4);
+    background: linear-gradient(#fff, #f3f5f4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.66),inset 0px 0px 0px rgba(0,0,0,0.17);
+}
+    label.edost_format_radio {
+    vertical-align: middle;
+    margin-right: 30px!important;
+    margin-bottom: 10px!important;
+	width: 80px;
+    height: 40px;
+    text-align: center;
+}
+    img.edost_ico {
+    padding: 4px 11px!important;
+}
+img.edost_ico_normal {
+    width: auto!important;
+    height: 32px!important;
+}
+span.edost_format_tariff {
+//    font-size: 16px!important;
+//    font-weight: bold!important;
+    font-family: "Open Sans", sans-serif;
+}
+.edost_format_description.edost_description {
+    font-size: 12px;
+    padding-top: 2px;
+	font-family: "Open Sans", sans-serif;
+	width: 60%;
+}
+div.edost span.edost_format_address_head {
+    font-size: 12px;
+    padding-top: 2px;
+	font-family: "Open Sans", sans-serif;
+	text-transform: capitalize;
+    color: #000!important;
+}
+div.edost span.edost_format_address {
+    font-size: 12px;
+    padding-top: 2px;
+	font-family: "Open Sans", sans-serif;
+}
+div#edost_general_div {
+    width: 100%!important;
+}
+div.edost span.edost_format_link {
+    cursor: pointer;
+    color: #F00!important;
+    font-size: 14px;
+    font-weight: normal!important;
+    border-bottom: 1px solid;
+	font-family: "Open Sans", sans-serif;
+	text-transform: uppercase;
+}
+div.edost span.edost_format_link:hover {
+    border-bottom: 1px solid #fff;
+}
+div.edost_office_window_close{cursor: pointer;}
+div#edost_tariff_div {
+    display: inline-table;
+	width: 100%;
+}
+div#edost_door_div {
+    width: 100%!important;
+}
+div#edost_house_div {
+    width: 100%!important;
+	margin-bottom: 60px!important;
+}
+div#edost_general_div {
+    margin-bottom: 60px!important;
+}
+div.edost span.edost_format_link_big {
+    cursor: pointer;
+    color: #F00;
+    font-size: 14px;
+    font-weight: normal!important;
+    border-bottom: 1px solid;
+	font-family: "Open Sans", sans-serif;
+}
+div.edost span.edost_format_link_big:hover {
+    border-bottom: 1px solid #fff;
+}
+span.edost_price_free {
+    color: #080;
+    font-weight: normal!important;
+    font-size: 14px!important;
+	font-family: "Open Sans", sans-serif;
+}
+div.edost div.edost_format_head {
+    background: none!important;
+    padding: 0!important;
+    color: #000!important;
+    font-size: 18px;
+    font-weight: normal!important;
+    font-family: "Open Sans", sans-serif;
+	margin-bottom: 20px;
+}
+div.edost div.edost_delimiter {
+    border: none!important;
+}
+span.edost_format_price.edost_day {
+    font-size: 12px!important;
+	font-family: "Open Sans", sans-serif;
+}
+span.edost_format_price.edost_price {
+    font-family: "Open Sans", sans-serif;
+//    font-size: 16px!important;
+}
+span.edost_name {
+    font-family: "Open Sans", sans-serif;
+}
+span.edost_price {
+    font-family: "Open Sans", sans-serif;
+}
+span.edost_day {
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+}	
+div.edost_balloon {
+    font-family: "Open Sans", sans-serif;
+}	
+a.edost_link {
+    color: red!important;
+    border-bottom: 1px solid;
+	text-transform: capitalize;
+}
+table.edost_office_head td {
+    cursor: pointer!important;
+}
+table.edost_office_head td.edost_office_head_all div {
+    cursor: pointer;
+    font-weight: normal!important;
+    color: #F00;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    margin: 20px;
+    text-align: center;
+    border-bottom: 1px dashed;
+	width: 85%;
+}
+table.edost_office_head td.edost_office_head_all div:hover {
+    border-bottom: 1px dashed #fff;
+}
+img.edost_ico_small {
+    width: auto!important;
+}
+div.edost_warning {
+    display: none;
+}
+div#edost_office_div {
+    width: 100%!important;
+}
+#edost_catalogdelivery_window_city_table td {
+    padding-right: 15px!important;
+    font-size: 12px;
+}
+#edost_catalogdelivery_window_city span.edost_city_link {
+    font-size: 13px!important;
+    font-weight: normal!important;
+    color: red!important;
+    border-bottom: 1px dashed;
+    width: 27%;
+}
+#edost_catalogdelivery_window_city span.edost_city_link:hover {
+    border-bottom: 1px dashed #fff;
+}
+#edost_catalogdelivery_window_city span.edost_city_name {
+    vertical-align: top!important;
+    font-size: 13px!important;
+}
+table#edost_catalogdelivery_window_city_table {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+}
+input#edost_catalogdelivery_quantity {
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+select#edost_location_select_city {
+    width: 71%;
+}
+table#edost_catalogdelivery_window_city_table {
+    width: 95%!important;
+}
+td.edost_button_right {
+    display: none;
+}
+a.edost_link:hover {
+    border-bottom: none;
+}
+.edost_button {
+	cursor: default;
+    pointer-events: none;
+}
+@media (max-width: 480px) { 
+    .edost_format_description.edost_description {
+        display: none;
+    }
+    span.edost_format_price.edost_day{
+        display: none;
+    }
+	td.edost_format_price {
+    width: 0%!important;
+    }
+	span.edost_format_price.edost_price {
+    font-size: 12px!important;
+    }
+	span.edost_format_tariff {
+    font-size: 12px!important;
+    }
+	span.edost_price_free {
+	position: relative;
+}
+    span.edost_price_free:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    content: '0 руб.';
+	font-family: "Open Sans", sans-serif;
+    font-size: 12px!important;
+	font-weight: bold;
+	color: #000;
+    }
+	#edost_catalogdelivery_window_city_table td {
+    width: 0%;
+    }
+}
+/*----------------- EDOST TEMPLATE END ---------------*/
+/*----------------- EDOST TEMPLATE END ---------------*/
+/*----- Шаблон оформления заказа битроник + EDOST ------*/
+.radio-item-description span {
+    display: none!important;
+}
+/*-------- EDOST TEMPLATE END -------*/
+/*----- Шаблон оформления заказа EDOST VISUAL ------*/
+.bx_logotype {
+    width: 100%!important;
+    height: 109px!important;
+	padding: 0!important;
+	background: -webkit-linear-gradient(#fff, #f3f5f4);
+    background: linear-gradient(#fff, #f3f5f4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.66),inset 0px -2px 0px rgba(0,0,0,0.17);
+    border: none;
+	margin: 0 auto;
+    margin-bottom: 20px;
+}
+.bx_element {
+    float: left;
+    vertical-align: top;
+    width: 20%;
+    display: block;
+    -webkit-transition: .4s;
+    transition: .4s;
+    padding: 20px 20px;
+    border: 1px dashed #d9d7e5;
+    margin: 20px;
+    min-height: 340px;
+	text-align: center;
+}
+.bx_element input[type="radio"]:checked + label .bx_logotype, .bx_element label.selected .bx_logotype {
+    border: 4px solid #487ddf !important;
+    padding: 1px;
+}
+.bx_logotype:hover {
+    border: 4px solid #487ddf !important;
+}
+.edost_show_map:hover{
+	border-bottom: none!important;
+}
+@media (max-width: 768px) { 
+   .bx_element {
+    width: 95%;
+	min-height: 10px;
+}
+.ik_select {
+    margin-left: 10px;
+}
+}
+@media (min-width: 768px) and (max-width: 966px) { 
+   .bx_element {
+    width: 40%;
+	min-height: 340px;
+}
+}
+/*-------- EDOST TEMPLATE END -------*/
+.new_delivery{
+	border-bottom: 1px dotted;
+	font-size: 12px;
+	margin-left: 5px;
+}
+.new_delivery:hover{
+	border-bottom: none;
+}
+.tit_del{
+    margin-top: 65px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.28571em;
+	float: left;
+}
+@media (max-width: 480px) { 
+    .table-item .photo {
+    float: left;
+    padding: 25px 5px 0;
+    width: 100px;
+    height: auto;
+    }
+	.form-order .buyer-info .textinput {
+    max-width: 260px;
+    }
+}
+@media (max-width: 979px){
+.custom-collection{
+display:none;
+}
+}

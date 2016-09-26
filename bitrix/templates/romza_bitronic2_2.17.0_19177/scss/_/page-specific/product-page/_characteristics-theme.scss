@@ -1,0 +1,18 @@
+.tech-info-block{
+	&>header:hover{
+		background: #ddd;
+	}
+}
+.detailed-tech{
+	dd{
+		background: #fff;
+	}
+}
+
+.label-default{
+	background-color: #DADADA;
+	@include set-colors(false, #fff);
+	&[href]:hover{
+		background-color: #aaa;
+	}
+}

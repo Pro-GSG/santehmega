@@ -1,0 +1,40 @@
+.buy-block-main{
+	@include main-normal;
+	text-shadow: none;
+	color: #000;
+	&:before{
+		@include silver-normal;
+	}
+}
+
+.buy-block-content{
+	border-color: #9e9e9e;
+	background: #fff;
+
+	.price-old{
+		color: #676767;
+	}
+
+	.btn-big.to-waitlist{
+		color: #a3a0b1;
+	}
+
+	.product-options{
+		.color{
+			@include silver-static;
+			&:hover, &.active{
+				border-color: $main-color-dark;
+			}
+		}
+	}
+}
+
+.buy-block-footer > .action{
+	@include set-colors('i, .text', $main-normal-textcolor);
+	color: $main-normal-textcolor;
+	&:hover, &:active{
+		>.text{ 
+			border-color: transparent;
+		}
+	}
+}

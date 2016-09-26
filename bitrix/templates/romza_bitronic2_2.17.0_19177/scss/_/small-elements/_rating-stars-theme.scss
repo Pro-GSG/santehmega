@@ -1,0 +1,37 @@
+.rating-stars{
+	i{ color: #cfcdd8;}
+	&[data-rating="1"]{
+		i:nth-of-type(-n+1){ color: #ec2700;}
+	}
+	&[data-rating="2"]{
+		i:nth-of-type(-n+2){ color: #ec2700;}
+	}
+	&[data-rating="3"]{
+		i:nth-of-type(-n+3){ color: #ff7200;}
+	}
+	&[data-rating="4"]{
+		i:nth-of-type(-n+4){ color: #fec52e;}
+	}
+	&[data-rating="5"]{
+		i:nth-of-type(-n+5){ color: #80b600;}
+	}
+
+	&[data-hoverrating="1"]{
+		i.hovered{ color: darken(#ec2700, 10%);}
+	}
+	&[data-hoverrating="2"]{
+		i.hovered{ color: darken(#ec2700, 10%);}
+	}
+	&[data-hoverrating="3"]{
+		i.hovered{ color: darken(#ff7200, 10%);}
+	}
+	&[data-hoverrating="4"]{
+		i.hovered{ color: darken(#fec52e, 10%);}
+	}
+	&[data-hoverrating="5"]{
+		i.hovered{ color: darken(#80b600, 10%);}
+	}
+}
+.be-first{
+	color: $main-color-dark;
+}

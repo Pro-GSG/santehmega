@@ -1,0 +1,37 @@
+.breadcrumbs-content{
+	a{
+		@include set-colors(false, #000, #686868);
+		@include set-border-colors(false, #000, transparent);
+	}
+
+	[data-backnav-enabled="true"] &{
+		a[data-backnav]{
+			background: #ebebeb;
+			@include set-colors(false, #686868);
+			transition: background .3s,
+						color .3s;
+
+			&:hover{
+				color: $main-normal-textcolor;
+				background: $main-color-soft;
+			}
+		}
+		.backnav{
+			@include silver-static;
+			>li{
+				>a{
+
+				}
+				&.active>a{
+					@include set-colors(false, #686868);
+				}
+			}
+		}/* >.backnav */
+	}
+}
+
+.b-list{
+	li>span{
+		color: #686868;
+	}
+}

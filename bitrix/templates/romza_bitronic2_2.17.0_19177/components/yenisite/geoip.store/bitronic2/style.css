@@ -1,0 +1,55 @@
+.btn-store-toggle {
+  position: relative;
+  top: -3px;
+  display: inline-block;
+  vertical-align: top;
+}
+@media (max-width: 767px) {
+  .btn-store-toggle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+    top: 0;
+    border: 2px solid;
+    border-color: #d6d6d6;
+    padding: 0px 10px 0 5px;
+    height: 40px;
+    line-height: 38px;
+    text-transform: uppercase;
+  }
+}
+.btn-store-toggle i:before {
+  margin-right: 0;
+}
+.geoipstore_add_text.after {
+  padding: 0 3px;
+}
+#modal_store-select-panel h2 {
+  text-indent: -1px;
+}
+#modal_store-select-panel .stores {
+  padding: 0;
+  list-style: none;
+}
+#modal_store-select-panel .stores > li {
+  color: #949494;
+}
+#modal_store-select-panel .stores > li:first-child {
+  padding-top: 0.5em;
+}
+#modal_store-select-panel .items {
+  padding-top: 1em;
+}
+#modal_store-select-panel .item {
+  text-align: left;
+}
+#modal_store-select-panel .item .itemlink {
+  text-decoration: underline;
+}
+#modal_store-select-panel .item.active .itemlink {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  cursor: default;
+  font-size: 1.1em;
+}

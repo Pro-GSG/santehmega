@@ -1,0 +1,71 @@
+.cool-slider{
+	background: #fff linear-gradient(fade-out(#e8e8e8, 0.15) 0%,
+								fade-out(#fff, 0.15) 25%,
+								fade-out(#fff, 0.15) 75%,
+								fade-out(#e8e8e8, 0.15) 100%);
+	box-shadow: inset 0px 0px 3px fade-out(#00003a, 0.79);
+	
+	// [data-limit-sliders="true"] &{
+	// 	background: none;
+	// 	box-shadow: none;
+	// 	>.container{
+	// 		background: #fff linear-gradient(fade-out(#e8e8e8, 0.15) 0%,
+	// 									fade-out(#fff, 0.15) 25%,
+	// 									fade-out(#fff, 0.15) 75%,
+	// 									fade-out(#e8e8e8, 0.15) 100%);
+	// 		box-shadow: inset 0px 0px 3px fade-out(#00003a, 0.79);
+	// 	}
+	// }
+
+	.techdata{
+		li{
+			color: #2f2c3f;
+			&:before{
+				background: #b2b0be;
+			}
+		}
+	}
+
+	.btn-buy{
+		@include btn-main;
+	}
+
+	.slider-controls{
+		.track{
+			background: #dedce4;
+			box-shadow: $coolslider-track-shadow;
+		}
+		.bar{
+			background: $main-normal-bg;
+			border-color: $coolslider-bar-bordercolor;
+			box-shadow: $coolslider-bar-shadow;
+		}
+		.dot{
+			background: $coolslider-dot-bg;
+			box-shadow: $coolslider-dot-shadow;
+			&:before{
+				background: $coolslider-innerdot-bg;
+				box-shadow: $coolslider-innerdot-shadow; 
+			}
+		}
+	}
+
+	.ctrl-item{
+		.name{
+			@include silver-normal;
+		}
+		&:hover{
+			.name{ @include silver-hovered;}
+		}
+		&:active, &.active{
+			div.name{ @include main-clicked;}
+		}
+
+		&:last-of-type{
+			.bar{ background-color: $main-color-soft;}
+		}
+	}
+}
+.cool-sticker{
+	@include silver-static;
+}
