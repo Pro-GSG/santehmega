@@ -203,6 +203,13 @@ if ($arResult['MODULES']['catalog'])
 	}
 }
 
+// количество товара на определённом складе
+$rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arResult["ID"], 'STORE_ID' => $arParams["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
+if ($arStore = $rsStore->Fetch()){
+	// echo $arStore['AMOUNT'];
+	$arResult["CATALOG_QUANTITY"] = $arStore['AMOUNT'];
+}
+
 $arResult['CHECK_QUANTITY'] = false;
 if (!isset($arResult['CATALOG_MEASURE_RATIO']))
 	$arResult['CATALOG_MEASURE_RATIO'] = 1;
@@ -382,7 +389,7 @@ if ($arResult['CATALOG'] && isset($arResult['OFFERS']) && !empty($arResult['OFFE
 		$arDouble[$arOffer['ID']] = true;
 		$arNewOffers[$keyOffer] = $arOffer;
 	}
-	
+
 	$arResult['OFFERS'] = $arNewOffers;
 	$arResult['SHOW_OFFERS_PROPS'] = $boolSKUDisplayProps;
 
@@ -416,10 +423,10 @@ if ($arResult['CATALOG'] && isset($arResult['OFFERS']) && !empty($arResult['OFFE
 	$arResult['OFFERS_PROP'] = $arUsedFields;
 	$arResult['OFFERS_PROP_CODES'] = (!empty($arUsedFields) ? base64_encode(serialize(array_keys($arUsedFields))) : '');
 
-	
+
 	$arResult['bSkuExt'] = $arParams['PRODUCT_DISPLAY_MODE'] == 'Y' && !empty($arResult['OFFERS_PROP']);
 	$arResult['bSkuSimple'] = !$arResult['bSkuExt'];
-	
+
 	if($arResult['bSkuExt'])
 	{
 		Collection::sortByColumn($arResult['OFFERS'], $arSortFields);
@@ -463,7 +470,7 @@ if ($arResult['CATALOG'] && isset($arResult['OFFERS']) && !empty($arResult['OFFE
 			$arPhoto['SRC_SMALL'] = CResizer2Resize::ResizeGD2($arPhoto['SRC'], $arParams["RESIZER_SETS"]['RESIZER_DETAIL_SMALL']);
 			$arPhoto['SRC_BIG'] = CResizer2Resize::ResizeGD2($arPhoto['SRC'], $arParams["RESIZER_SETS"]['RESIZER_DETAIL_BIG']);
 			$arOffer['MORE_PHOTO'][md5($arPhoto['SRC'])] = $arPhoto;
-			
+
 		} unset($arPhoto, $offerSlider);
 		if ($arParams['ADD_PARENT_PHOTO'] == 'Y') {
 			foreach($arResult['MORE_PHOTO'] as &$arResPhoto) {
@@ -548,7 +555,7 @@ if ($arResult['CATALOG'] && isset($arResult['OFFERS']) && !empty($arResult['OFFE
 				{
 					$arResult['OFFERS_DISPLAY_PROPS'][$arOneProp['CODE']] = $arOneProp['NAME'];
 				}
-				
+
 				if ('F' == $arOneProp['PROPERTY_TYPE'])
 					continue;
 				$arSKUProps[] = array(
@@ -698,7 +705,7 @@ if ($arResult['MODULES']['currency'])
 
 if($arResult['bSkuExt'])
 {
-	
+
 	if(empty($arResult['MIN_PRICE']))
 	{
 		$arResult['MIN_PRICE']['CURRENCY'] = ($arParams['CONVERT_CURRENCY'] = 'Y') ? $arParams['CURRENCY_ID'] : $arResult['OFFERS'][$arResult['OFFERS_SELECTED']]['MIN_PRICE']['CURRENCY'];
@@ -862,7 +869,7 @@ $arUserType = CIBlockProperty::GetUserType('directory');
 foreach ($arResult['DISPLAY_PROPERTIES'] as &$arProp) {
 	if ($arProp['USER_TYPE'] !== 'directory') continue;
 	if ($arProp['SMART_FILTER'] === 'Y') continue;
-	
+
 	//fill images
 	if (!is_array($arProp['VALUE'])) {
 		$arProp['DISPLAY_VALUE'] = array($arProp['DISPLAY_VALUE']);
@@ -915,7 +922,7 @@ if (CModule::IncludeModule('yenisite.bitronic2lite') && CModule::IncludeModule('
 	}
 	$arResult['CHECK_QUANTITY'] = (CMarketCatalog::UsesQuantity($arParams['IBLOCK_ID']) == 1);
 	$arResult['CATALOG_QUANTITY'] = intval($arResult['PROPERTIES']['MARKET_QUANTITY']['VALUE']);
-	
+
 	if ($arResult['CHECK_QUANTITY'] && $arResult['CATALOG_QUANTITY'] <= 0) {
 		$arResult['CAN_BUY'] = false;
 	}
