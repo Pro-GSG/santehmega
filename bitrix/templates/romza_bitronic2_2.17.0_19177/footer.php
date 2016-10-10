@@ -280,3 +280,4 @@ if (file_exists($panelPath) && $_REQUEST['no_statistic'] !== 'y') {
 </html>
 <?
 vregionsRedirect();?>
+<? Aristov\VRegions\Tools::replaceVarsInMeta(); ?>
