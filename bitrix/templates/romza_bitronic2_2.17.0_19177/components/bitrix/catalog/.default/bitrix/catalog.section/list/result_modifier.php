@@ -161,6 +161,12 @@ if (!empty($arResult['ITEMS']))
 			? floatval($arItem['CATALOG_QUANTITY'])
 			: intval($arItem['CATALOG_QUANTITY'])
 		);
+		// количество товара на определённом складе
+		$rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arItem["ID"], 'STORE_ID' => $arParams["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
+		if ($arStore = $rsStore->Fetch()){
+			// echo $arStore['AMOUNT'];
+			$arItem["CATALOG_QUANTITY"] = $arStore['AMOUNT'];
+		}
 		$arItem['CATALOG'] = false;
 		if (!isset($arItem['CATALOG_SUBSCRIPTION']) || 'Y' != $arItem['CATALOG_SUBSCRIPTION'])
 			$arItem['CATALOG_SUBSCRIPTION'] = 'N';
