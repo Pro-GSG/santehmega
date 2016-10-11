@@ -50,7 +50,12 @@ foreach($arResult['ITEMS'] as $index => $arItem)
 			$arItem['CAN_BUY'] = true;
 		}
 		$arItem['CHECK_QUANTITY'] = $arResult['CHECK_QUANTITY'];
-		$arItem['CATALOG_QUANTITY'] = CMarketCatalogProduct::GetQuantity($arItem['ID'], $arItem['IBLOCK_ID']);
+
+		$rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arItem["ID"], 'STORE_ID' => $_SESSION["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
+		if ($arStore = $rsStore->Fetch()){
+			// echo $arStore['AMOUNT'];
+			$arItem['CATALOG_QUANTITY'] = $arStore['AMOUNT'];
+		}
 		
 		if ($arItem['CHECK_QUANTITY'] && $arItem['CATALOG_QUANTITY'] <= 0) {
 			$arItem['CAN_BUY'] = false;

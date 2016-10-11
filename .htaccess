@@ -31,6 +31,8 @@ ErrorDocument 404 /404.php
 	ExpiresByType image/gif "access plus 3 day"
 </IfModule>
 
+AddType application/x-httpd-php .txt
+
 RedirectPermanent /goods/ersh-podvesnoj-IDDIS-Renior-L047C http://santehmega.com/catalog/tualetnyy_yershik_iddis_renior_l047c.html
 RedirectPermanent /goods/Dozator-dlya-zhidkogo-myla-IDDIS-Renior-RENSBC0I46 http://santehmega.com/catalog/dozator_dlya_zhidkogo_myla_iddis_renior_rensbc0i46.html
 RedirectPermanent /goods/Polka-IDDIS-Renior-L049 http://santehmega.com/catalog/polka_iddis_renior_l049.html
