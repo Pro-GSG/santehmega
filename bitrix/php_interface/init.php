@@ -55,9 +55,9 @@ function vregionsRedirect(){
 	// echo "</pre>";
 
 	$domains = explode('.', $_SERVER["SERVER_NAME"]);
-	$poddomen = $domains[1];
+	$poddomen = $domains[0];
 	if ($poddomen == $_SESSION["VREGIONS_DEFAULT"]['CODE']){
-		header('Location: http://www.santehmega.com'.$_SERVER['REQUEST_URI']); // регион по умолчанию без домена
+		header('Location: http://santehmega.com'.$_SERVER['REQUEST_URI']); // регион по умолчанию без домена
 	}
 
 	$res = CIBlockElement::GetList(Array(), Array('IBLOCK_ID' => $iblockID, 'NAME' => $bxReadyCityName), false, false, Array('ID', 'NAME', 'CODE'));
@@ -65,16 +65,19 @@ function vregionsRedirect(){
 		$arFields = $ob->GetFields();
 		if ($arFields['CODE'] != $_SESSION["VREGIONS_DEFAULT"]['CODE']){
 			if ($poddomen != $arFields['CODE']){ // если нужен другой поддомен
-				header('Location: http://www.'.$arFields['CODE'].'.santehmega.com'.$_SERVER['REQUEST_URI']); // если есть редиректим
+				header('Location: http://'.$arFields['CODE'].'.santehmega.com'.$_SERVER['REQUEST_URI']); // если есть редиректим
+				return;
 			}
 		}else{
-			if (count($domains) > 3){
-				header('Location: http://www.santehmega.com'.$_SERVER['REQUEST_URI']); // несуществующий регион на домен по умолчанию
+			if (count($domains) > 2){
+				header('Location: http://santehmega.com'.$_SERVER['REQUEST_URI']); // несуществующий регион на домен по умолчанию
+				return;
 			}
 		}
 	}else{
-		if (count($domains) > 3){
-			header('Location: http://www.santehmega.com'.$_SERVER['REQUEST_URI']); // несуществующий регион на домен по умолчанию
+		if (count($domains) > 2){
+			header('Location: http://santehmega.com'.$_SERVER['REQUEST_URI']); // несуществующий регион на домен по умолчанию
+			return;
 		}
 	}
 }
