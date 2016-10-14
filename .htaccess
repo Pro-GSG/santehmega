@@ -21,10 +21,9 @@ ErrorDocument 404 /404.php
 	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
 
-	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
-</IfModule>
+
+	</IfModule>
 
 <IfModule mod_dir.c>
 	DirectoryIndex index.php index.html

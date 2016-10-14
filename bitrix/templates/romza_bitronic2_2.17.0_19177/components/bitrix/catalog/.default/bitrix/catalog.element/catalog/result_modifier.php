@@ -204,11 +204,11 @@ if ($arResult['MODULES']['catalog'])
 }
 
 // количество товара на определённом складе
-$rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arResult["ID"], 'STORE_ID' => $arParams["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
-if ($arStore = $rsStore->Fetch()){
-	// echo $arStore['AMOUNT'];
-	$arResult["CATALOG_QUANTITY"] = $arStore['AMOUNT'];
-}
+// $rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arResult["ID"], 'STORE_ID' => $arParams["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
+// if ($arStore = $rsStore->Fetch()){
+// 	// echo $arStore['AMOUNT'];
+// 	$arResult["CATALOG_QUANTITY"] = $arStore['AMOUNT'];
+// }
 
 $arResult['CHECK_QUANTITY'] = false;
 if (!isset($arResult['CATALOG_MEASURE_RATIO']))
