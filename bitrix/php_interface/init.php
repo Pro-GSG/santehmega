@@ -50,9 +50,9 @@ function vregionsRedirect(){
 	$iblockID = COption::GetOptionString("aristov.vregions", "vregions_iblock_id");
 	$vregions_default = COption::GetOptionString("aristov.vregions", "vregions_default");
 
-	// echo "<pre>";
-	// print_r(explode('.', $_SERVER["SERVER_NAME"]));
-	// echo "</pre>";
+// 	echo "<pre>";
+// 	print_r(explode('.', $_SERVER["VREGIONS_DEFAULT"]));
+// 	echo "</pre>";
 
 	$domains = explode('.', $_SERVER["SERVER_NAME"]);
 	$poddomen = $domains[0];
@@ -60,7 +60,7 @@ function vregionsRedirect(){
 		header('Location: http://santehmega.com'.$_SERVER['REQUEST_URI']); // регион по умолчанию без домена
 	}
 
-	$res = CIBlockElement::GetList(Array(), Array('IBLOCK_ID' => $iblockID, 'NAME' => $bxReadyCityName), false, false, Array('ID', 'NAME', 'CODE'));
+	$res = CIBlockElement::GetList(Array(), Array('IBLOCK_ID' => $iblockID, 'NAME' => $bxReadyCityName, 'ACTIVE' => 'Y'), false, false, Array('ID', 'NAME', 'CODE'));
 	if ($ob = $res->GetNextElement()){ // смотрим есть ли в регионах регион с таким именем
 		$arFields = $ob->GetFields();
 		if ($arFields['CODE'] != $_SESSION["VREGIONS_DEFAULT"]['CODE']){

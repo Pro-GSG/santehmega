@@ -47,7 +47,7 @@ if ('modal' == $rz_b2_options['detail_gallery_type']) {
 }
 
 include 'include/prepare_params_element.php'; // @var $arPrepareParams
-// $arPrepareParams["VREGIONS_REGION"] = $_SESSION["VREGIONS_REGION"];
+$arPrepareParams["VREGIONS_REGION"] = $_SESSION["VREGIONS_REGION"];
 ob_start();
 $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:catalog.element",
