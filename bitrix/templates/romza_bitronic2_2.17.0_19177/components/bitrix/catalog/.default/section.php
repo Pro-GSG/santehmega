@@ -172,7 +172,7 @@ if(!empty(${$arParams["FILTER_NAME"]}))
  * @var array $arSectionParams
  */
 include 'include/prepare_params_section.php';
-// $arSectionParams["VREGIONS_REGION"] = $_SESSION["VREGIONS_REGION"];
+$arSectionParams["VREGIONS_REGION"] = $_SESSION["VREGIONS_REGION"];
 ?>
 			
 			<div class="<?=$catalogClass?>" id="catalog_section" data-hover-effect="<?= $arResult['HOVER-MODE'] ?>"  data-quick-view-enabled="false"><!--

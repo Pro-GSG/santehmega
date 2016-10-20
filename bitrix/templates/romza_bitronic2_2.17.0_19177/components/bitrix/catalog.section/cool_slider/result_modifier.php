@@ -55,14 +55,16 @@ foreach($arResult['ITEMS'] as $index => $arItem)
 			$arResult['ITEMS'][$index]['CAN_BUY'] = $arItem['CAN_BUY'] = true;
 		}
 		$arResult['ITEMS'][$index]['CHECK_QUANTITY'] = $arResult['CHECK_QUANTITY'];
-		// $arResult['ITEMS'][$index]['CATALOG_QUANTITY'] = CMarketCatalogProduct::GetQuantity($arItem['ID'], $arItem['IBLOCK_ID']);
-		// РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕРІР°СЂР° РЅР° РѕРїСЂРµРґРµР»С‘РЅРЅРѕРј СЃРєР»Р°РґРµ
-		// $rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arItem["ID"], 'STORE_ID' => $_SESSION["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
-		// if ($arStore = $rsStore->Fetch()){
-		// 	// echo $arStore['AMOUNT'];
-		// 	$arResult['ITEMS'][$index]['CATALOG_QUANTITY'] = $arStore['AMOUNT'];
-		// }
-		
+		$arResult['ITEMS'][$index]['CATALOG_QUANTITY'] = CMarketCatalogProduct::GetQuantity($arItem['ID'], $arItem['IBLOCK_ID']);
+		// количество товара на определённом складе
+		if ($_SESSION["VREGIONS_REGION"]["ID_SKLADA"]){
+			$rsStore = CCatalogStoreProduct::GetList(array(), array('PRODUCT_ID' => $arItem["ID"], 'STORE_ID' => $_SESSION["VREGIONS_REGION"]["ID_SKLADA"]), false, false, array('AMOUNT'));
+			if ($arStore = $rsStore->Fetch()){
+				// echo $arStore['AMOUNT'];
+				$arResult['ITEMS'][$index]['CATALOG_QUANTITY'] = $arStore['AMOUNT'];
+			}
+		}
+
 		if ($arResult['ITEMS'][$index]['CHECK_QUANTITY'] && $arResult['ITEMS'][$index]['CATALOG_QUANTITY'] <= 0) {
 			$arResult['ITEMS'][$index]['CAN_BUY'] = $arItem['CAN_BUY'] = false;
 		}
