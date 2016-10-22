@@ -2,7 +2,7 @@
 function yaMarketAgentFirst() {
     BXClearCache(true, "/y-market/");
     $ch = curl_init();
-    
+
 // set URL and other appropriate options
     curl_setopt($ch, CURLOPT_URL, "http://santehmega.com/EXPORT_YML/y-market/");
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -44,15 +44,27 @@ function yaMarketAgentSkovoroda() {
 }
 
 function vregionsRedirect(){
+	global $APPLICATION;
 	CModule::IncludeModule('iblock');
+
 	$bxReadyCityName = explode('/', $_COOKIE["YS_GEO_IP_CITY"])[2]; // bxready название города
+
+	if (!$_SESSION["VREGIONS_OLD_COOKIE"]){ // первый заход на сайт
+		$_SESSION["VREGIONS_OLD_COOKIE"] = $bxReadyCityName; // запоминаем куки и не редиректим
+		return false;
+	}
+
+	if ($_SESSION["VREGIONS_OLD_COOKIE"] == $bxReadyCityName){ // если не сменили город, то ничего не делаем
+		return false;
+	}
+
 	$vregionsName = $_SESSION['VREGIONS_REGION']["NAME"]; // текущий регион из Регионов продаж
 	$iblockID = COption::GetOptionString("aristov.vregions", "vregions_iblock_id");
 	$vregions_default = COption::GetOptionString("aristov.vregions", "vregions_default");
 
-// 	echo "<pre>";
-// 	print_r(explode('.', $_SERVER["VREGIONS_DEFAULT"]));
-// 	echo "</pre>";
+	// 	echo "<pre>";
+	// 	print_r(explode('.', $_SERVER["VREGIONS_DEFAULT"]));
+	// 	echo "</pre>";
 
 	$domains = explode('.', $_SERVER["SERVER_NAME"]);
 	$poddomen = $domains[0];
@@ -81,4 +93,5 @@ function vregionsRedirect(){
 		}
 	}
 }
+
 ?>
